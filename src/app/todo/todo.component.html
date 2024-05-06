@@ -1,0 +1,36 @@
+<div class="flex items-center gap-2 cursor-pointer group">
+    <button
+        class="relative grid w-6 border rounded-full before:transition-transform before:duration-500 aspect-square border-black-1 place-content-center bg-gradient-to-br from-primary-check-background-start to-primary-check-background-end before:absolute before:inset-0 before:rounded-full before:bg-white dark:before:bg-dark-very-dark-desaturated-blue before:group-hover:scale-75 "
+        [ngClass]="{'before:hidden':!todo.isActive }">
+        <img *ngIf="!todo.isActive" src="../assets/icons/icon-check.svg" alt="">
+    </button>
+    <p [ngClass]="{'line-through': !todo.isActive, 
+                    'text-neutral-light-grayish-blue':!todo.isActive && !isDarkMode,
+                    'dark:text-dark-dark-grayish-blue':!todo.isActive && isDarkMode,
+                    'text-neutral-very-dark-grayish':todo.isActive,
+                    'text-dark-light-grayish-blue': !todo.isActive && isDarkMode
+                  }" class="text-sm">
+        {{todo.todo}} </p>
+    <button (click)="removeTodo(0)" class="ml-auto size-4 group-hover:animate-spin ">
+        <img class="dark:filter dark:invert" src="../assets/icons/icon-cross.svg" alt="Cross icon">
+    </button>
+</div>
+
+
+
+
+<!-- <button
+            class="relative grid w-6 border rounded-full before:transition-transform before:duration-500 aspect-square border-black-1 place-content-center bg-gradient-to-br from-primary-check-background-start to-primary-check-background-end before:absolute before:inset-0 before:rounded-full before:bg-white dark:before:bg-dark-very-dark-desaturated-blue before:group-hover:scale-75 "
+            [ngClass]="{'before:hidden':!todo.isActive }">
+            <img *ngIf="!todo.isActive" src="../assets/icons/icon-check.svg" alt="">
+          </button>
+          <p [ngClass]="{'line-through': !todo.isActive, 
+                'text-neutral-light-grayish-blue':!todo.isActive && !isDarkMode,
+                'dark:text-dark-dark-grayish-blue':!todo.isActive && isDarkMode,
+                'text-neutral-very-dark-grayish':todo.isActive,
+                'text-dark-light-grayish-blue': !todo.isActive && isDarkMode
+              }" class="text-sm">
+            {{todo.todo}} </p>
+          <button (click)="removeTodo(i)" class="ml-auto size-4 group-hover:animate-spin ">
+            <img class="dark:filter dark:invert" src="../assets/icons/icon-cross.svg" alt="Cross icon">
+          </button> -->
