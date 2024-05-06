@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{data.title}}</h1>
+<div mat-dialog-content>
+    <p>{{data.message}}</p>
+</div>
+<div mat-dialog-actions class="space-x-4">
+    <button class="ml-auto" mat-button [mat-dialog-close]="data.isDelete">{{data.isDelete? 'Yes' :
+        'Close'}}</button>
+    <button *ngIf="data.isDelete" mat-button [mat-dialog-close]="false" cdkFocusInitial>No</button>
+</div>

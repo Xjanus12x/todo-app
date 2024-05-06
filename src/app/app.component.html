@@ -2,8 +2,7 @@
                   'bg-mobile-dark':isDarkMode , 
                   'md:bg-desktop-light':!isDarkMode ,
                   'md:bg-desktop-dark':isDarkMode ,
-                  }"
-  class="min-h-[100svh] bg-top bg-no-repeat bg-contain bg-neutral-very-light-gray dark:bg-dark-very-dark-blue ">
+                  }" class="bg-top bg-no-repeat bg-contain  bg-neutral-very-light-gray dark:bg-dark-very-dark-blue">
   <div class="space-y-8 px-6 py-[11%] md:py-[5%] md:max-w-xl mx-auto">
 
     <div class="flex items-center justify-between">
@@ -29,7 +28,7 @@
         <li *ngFor="let todo of todos; let i = index" (click)="toggleTodo(todo)" class="grid px-4 py-5" cdkDrag
           [cdkDragData]="todo" (cdkDragStarted)="onDragStarted()" (cdkDragEnded)="onDragEnded()">
           <div class="px-4 py-6 border-4 border-red-500" *cdkDragPlaceholder></div>
-          <app-todo [isDarkMode]="isDarkMode" [todo]="todo"></app-todo>
+          <app-todo [isDarkMode]="isDarkMode" [todo]="todo" (isRemoving)="removeTodo($event,i)"></app-todo>
         </li>
 
         <li class="flex items-center justify-between px-4 py-4 text-sm ">
@@ -52,6 +51,7 @@
         <button
           [ngClass]="{'text-primary-bright-blue': currActiveFilterType === 'completed','text-neutral-dark-grayish-blue': currActiveFilterType !== 'completed'}"
           class="font-bold " (click)="filterTodo('completed')">Completed</button>
+
       </div>
     </div>
 

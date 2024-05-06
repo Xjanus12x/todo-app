@@ -11,7 +11,7 @@
                     'text-dark-light-grayish-blue': !todo.isActive && isDarkMode
                   }" class="text-sm">
         {{todo.todo}} </p>
-    <button (click)="removeTodo(0)" class="ml-auto size-4 group-hover:animate-spin ">
+    <button (click)="removeTodo()" class="ml-auto size-4 group-hover:animate-spin ">
         <img class="dark:filter dark:invert" src="../assets/icons/icon-cross.svg" alt="Cross icon">
     </button>
 </div>

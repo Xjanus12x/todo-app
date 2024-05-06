@@ -5,18 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TodoComponent } from './todo/todo.component';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TodoComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    DragDropModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, TodoComponent, DialogBoxComponent],
+  imports: [BrowserModule, AppRoutingModule, DragDropModule, MatDialogModule],
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
